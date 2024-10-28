@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts Shop</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  </head>
+  <body class=" bg-Rose/50">
+    <div class="flex flex-col lg:flex-row container mx-auto p-8">
+      <!-- Desserts Section -->
+      <div class="w-full lg:w-3/4">
+        <!-- Desserts Heading -->
+        <h1 class="text-4xl font-bold text-brown-700 mb-8">Desserts</h1>
+        <!-- Grid Layout for Desserts -->
+        <div id="desserts-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Dessert items will be dynamically generated here -->
+        </div>
+      </div>
+
+      <!-- Cart Section -->
+      <div class="bg-white p-6 rounded-lg shadow-md w-full lg:w-96 lg:fixed lg:top-8 lg:right-8 mt-8 lg:mt-0">
+        <h2 class="text-2xl font-bold mb-4 text-[]">Your Cart (<span class="cart-count">0</span>)</h2>
+        <div class="flex justify-center">
+            <img src="./assets/images/illustration-empty-cart.svg" alt="Empty Cart" class="w-32 h-32">
+        </div>
+        <p class="text-center mt-4 text-gray-600">Your added items will appear here</p>
+        <div class="cart-items"></div>
+      </div>
+
+      <div id="orderConfirmedModal" class="hidden fixed inset-0 flex items-center justify-center bg-[rgba(0,0,0,0.5)] z-50">
+        <div class="bg-white p-8 w-full sm:w-96 sm:rounded-lg sm:shadow-lg sm:relative absolute bottom-0"> <!-- Tambahkan class relative -->
+          <div class="flex flex-col space-x-2 gap-2">
+            <div class="flex justify-between">
+              <img src="./assets/images/icon-order-confirmed.svg" alt="confirmation" class="w-7 h-7">
+              <button id="closeModalBtn" class="bg-transparent border-solid border-2 border-Rose/300 px-1 py-1 rounded-full"> 
+                <img src="./assets/images/icon-remove-item.svg" alt="close">
+              </button>
+            </div>
+            <h2 class="text-2xl font-bold">Order Confirmed</h2>
+            <p class="text-Rose/400 text-sm">We hope you enjoy your food!</p>
+          </div>
+          <div id="orderDetails" class="my-4 bg-Rose/50">
+              <!-- Order details will be inserted here dynamically -->
+          </div>
+          <div class="flex justify-between font-bold text-lg border-t pt-4">
+              <span>Order Total:</span>
+              <span id="orderTotal">$0.00</span>
+          </div>
+          <button id="startNewOrderBtn" class="mt-6 w-full bg-red-500 text-white py-2 rounded-full text-lg font-semibold">Start New Order</button>
+        </div>
+      </div>
+
+    </div>
+      <!-- Link to external JavaScript file -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
